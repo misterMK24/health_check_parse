@@ -1,10 +1,10 @@
 import os
 import re
 
-def __init__(self):
-    print("Here a new class")
-    global command_name
-    command_name = input("Enter command: ")
+# def __init__(self):
+#    print("Here a new class")
+#    global command_name
+#    command_name = input("Enter command: ")
 
 
 def get_dir(self):
@@ -41,8 +41,8 @@ def to_file(self, result_string, gw_name):
             file.write(string)
 
 
-def dir_working(self):
-    dir_list = self.get_dir()
+def dir_working(self, dir_list):
+    # dir_list = self.get_dir()
     # result_string :str
     for gw_name in dir_list:
         # check_pasing = re.search(r'[.]{1}\w+', dir)

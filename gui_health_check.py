@@ -5,7 +5,7 @@ import os
 import re
 import hcf
 
-
+# hcf - functions to parse file and going through dir
 
 class MyWindow(QWidget):
     def __init__(self):
@@ -44,12 +44,14 @@ class MyWindow(QWidget):
 
 
     def ChoosePressed(self):
+        global namedir
         namedir = QFileDialog.getExistingDirectory(self, 'Выберите директорию')
-        return namedir
+
 
     def OkPressed(self):
         command_name = self.input_text1.text()
-        print(command_name)
+        print(command_name, os.listdir(namedir))
+
         pass
 
 
