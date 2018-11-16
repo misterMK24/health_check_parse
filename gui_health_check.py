@@ -51,7 +51,7 @@ class MyWindow(QWidget):
     def OkPressed(self):
         command_name = self.input_text1.text()
         print(command_name, os.listdir(namedir))
-
+        hcf.dir_working(namedir, command_name)
         pass
 
 
