@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QHBoxLayout, QLabel, QPushBu
 from PyQt5 import QtGui
 import os
 import re
-import hcf
+from hcf import dir_working
 
 # hcf - functions to parse file and going through dir
 
@@ -22,7 +22,6 @@ class MyWindow(QWidget):
 
         self.button1 = QPushButton("Выполнить")
         self.button2 = QPushButton("Choose...")
-
 
         self.hbox1 = QHBoxLayout()
         self.hbox2 = QHBoxLayout()
@@ -50,9 +49,7 @@ class MyWindow(QWidget):
 
     def OkPressed(self):
         command_name = self.input_text1.text()
-        print(command_name, os.listdir(namedir))
-        hcf.dir_working(namedir, command_name)
-        pass
+        dir_working(namedir, command_name)
 
 
 if __name__ == "__main__":
