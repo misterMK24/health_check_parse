@@ -42,3 +42,5 @@ def dir_working(namedir, command_name):
                     if re.search(filename, in_dir) is not None:  # если искомый файл существует, то парсим
                         result_string = parse_file(command_name)
                         to_file(result_string, gw_name)
+
+

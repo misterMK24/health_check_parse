@@ -11,7 +11,8 @@ class MyWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Application")
-        self.resize(300, 300)
+        # self.resize(300, 300)
+        self.setFixedSize(250, 250)
 
         self.label1 = QLabel("Input the command: ")
         self.label2 = QLabel("Input the directory: ")
