@@ -2,18 +2,17 @@ import os
 import re
 
 global filename
-filename = 'CPaudit_HealthCheck.txt'
+filename = 'CP_Audit_Health_Check.txt'
 
 def dir_wroking_2(namedir, command_name):
-    if re.findall(r'[/]{1}', namedir):
-        namedir_true = (re.sub(r'[/]', r'\\', namedir))     # меняем / на \\ в указанном пути для корректной обработки
-    for each_entry in os.listdir(namedir):
-        if os.path.isdir(namedir + "\\" + each_entry):
-            print("true")
-        elif re.fullmatch(filename, each_entry):
-            print("match cp_audit_health_check!")
-        else:
-            print("no way")
+    for root, dirs, files in os.walk(namedir):
+        for file in files:
+            if re.fullmatch(filename, file):
+                print("vyzyvai parse file func i peredai dir")
 
 
-dir_wroking_2("C:\_python", "CP_Audit_Health_Check.txt")
+
+
+
+
+dir_wroking_2("C:\_python", "uname -a")
