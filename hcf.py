@@ -65,6 +65,10 @@ def parse_file_2(command_name):
     result_string = []
     with open(filename, 'r') as file:
         for line in file:
+            if re.search(r'\ALinux', line):
+                name = re.search(r'\s\w+\s', line)
+                gw_name = name.expand()
+                result_string.append(gw_name)
             match_command = re.match(r'={3}\s' + command_name + r'\s[=]{3}', line)
             if match_command or index == 1:
                 index = 1
