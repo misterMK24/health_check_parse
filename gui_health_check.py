@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QHBoxLayout, QLabel, QPushBu
 from PyQt5 import QtGui
 import os
 import re
-from hcf import dir_working
+from hcf import dir_working_2
 
 # hcf - functions to parse file and going through dir
 
@@ -11,7 +11,8 @@ class MyWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Application")
-        self.resize(300, 300)
+        # self.resize(300, 300)
+        self.setFixedSize(400, 400)
 
         self.label1 = QLabel("Input the command: ")
         self.label2 = QLabel("Input the directory: ")
@@ -49,7 +50,8 @@ class MyWindow(QWidget):
 
     def OkPressed(self):
         command_name = self.input_text1.text()
-        dir_working(namedir, command_name)
+        dir_working_2(namedir, command_name)
+        # dir_working(namedir, command_name)
 
 
 if __name__ == "__main__":
