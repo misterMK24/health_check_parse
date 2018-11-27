@@ -10,9 +10,9 @@ from hcf import dir_working_2
 class MyWindow(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Application")
-        # self.resize(300, 300)
-        self.setFixedSize(400, 400)
+        self.setWindowTitle("CPaudit_Health_Check")
+        self.resize(300, 300)
+        # self.setFixedSize(400, 400)
 
         self.label1 = QLabel("Input the command: ")
         self.label2 = QLabel("Input the directory: ")
