@@ -12,7 +12,7 @@ class MyWindow(QWidget):
         super().__init__()
         self.setWindowTitle("Application")
         # self.resize(300, 300)
-        self.setFixedSize(250, 250)
+        self.setFixedSize(400, 400)
 
         self.label1 = QLabel("Input the command: ")
         self.label2 = QLabel("Input the directory: ")
