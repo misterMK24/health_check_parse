@@ -43,6 +43,11 @@ class MyWindow(QWidget):
         self.button2.clicked.connect(self.ChoosePressed)
 
 
+    def getFile(self):
+        filename = QFileDialog.getSaveFileName(caption="Укажите файл для сохранения", options=QFileDialog.setDefaultSuffix("txt"))
+        return filename
+
+    
     def ChoosePressed(self):
         global namedir
         namedir = QFileDialog.getExistingDirectory(self, 'Выберите директорию')
