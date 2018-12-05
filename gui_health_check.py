@@ -16,6 +16,7 @@ class MyWindow(QWidget):
 
         self.label1 = QLabel("Input the command: ")
         self.label2 = QLabel("Input the directory: ")
+        self.label3 = QLabel("Выберите файл для сохранения")
 
         self.input_text1 = QLineEdit()
         self.input_text1.setToolTip("без пробелов")
@@ -23,17 +24,22 @@ class MyWindow(QWidget):
 
         self.button1 = QPushButton("Выполнить")
         self.button2 = QPushButton("Choose...")
+        self.button3 = QPushButton("Выбрать файл...")
 
         self.hbox1 = QHBoxLayout()
         self.hbox2 = QHBoxLayout()
+        self.hbox3 = QHBoxLayout()
         self.hbox1.addWidget(self.label1)
         self.hbox1.addWidget(self.input_text1)
         self.hbox2.addWidget(self.label2)
         self.hbox2.addWidget(self.button2)
+        self.hbox3.addWidget(self.label3)
+        self.hbox3.addWidget(self.button3)
 
         self.vbox1 = QVBoxLayout()
         self.vbox1.addLayout(self.hbox1)
         self.vbox1.addLayout(self.hbox2)
+        self.vbox1.addLayout(self.hbox3)
         self.vbox1.addWidget(self.button1)
         self.setLayout(self.vbox1)
         self.setupUI()
@@ -41,10 +47,11 @@ class MyWindow(QWidget):
     def setupUI(self):
         self.button1.clicked.connect(self.OkPressed)
         self.button2.clicked.connect(self.ChoosePressed)
-
+        filename =  self.button3.clicked.connect(self.getFile)
 
     def getFile(self):
-        filename = QFileDialog.getSaveFileName(caption="Укажите файл для сохранения", options=QFileDialog.setDefaultSuffix("txt"))
+        getfile = QFileDialog(self)
+        filename = getfile.getSaveFileName(caption="Укажите файл для сохранения", filter="txt file type (*.txt) ;; ALL (*) ")# , initialFilter='TXTs (*.txt)')
         return filename
 
 
